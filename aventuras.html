@@ -1,0 +1,343 @@
+<title>Aventuras - Aventuras sin Rumbo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary: #FF6B35;
+    --accent: #1AC8EB;
+    --bg: #0A0E27;
+    --text: #F5F5F5;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .logo:hover {
+    opacity: 0.8;
+  }
+
+  .aventuras-container {
+    padding: 80px 0;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+
+  .aventura {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .aventura-imagen {
+    width: 100%;
+    height: 600px;
+    background: rgba(255, 107, 53, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8em;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .aventura-info h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+
+  .aventura-ubicacion {
+    color: #888;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+  }
+
+  .aventura-descripcion {
+    color: #AAA;
+    font-size: 1.05em;
+    line-height: 1.8;
+    max-width: 600px;
+  }
+
+  .sugerencia-section {
+    margin-top: 150px;
+    padding: 100px 0;
+    border-top: 1px solid rgba(255, 107, 53, 0.1);
+  }
+
+  .sugerencia-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    font-weight: 600;
+  }
+
+  .form-grupo {
+    margin-bottom: 30px;
+  }
+
+  .form-grupo label {
+    display: block;
+    color: var(--text);
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    font-weight: 500;
+  }
+
+  .form-grupo input,
+  .form-grupo textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 1em;
+    font-family: inherit;
+  }
+
+  .form-grupo input:focus,
+  .form-grupo textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 107, 53, 0.1);
+  }
+
+  .form-grupo textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-grupo input::placeholder,
+  .form-grupo textarea::placeholder {
+    color: #666;
+  }
+
+  .enviar-btn {
+    padding: 15px 50px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s;
+  }
+
+  .enviar-btn:hover {
+    opacity: 0.9;
+  }
+
+  .mensaje-exito {
+    color: var(--accent);
+    margin-top: 15px;
+    display: none;
+  }
+
+  footer {
+    padding: 100px 0 40px;
+    text-align: center;
+    color: #666;
+    font-size: 0.95em;
+  }
+</style>
+
+<div class="container">
+  <header>
+    <a href="index.html" class="logo">← Volver</a>
+    <a href="https://www.tiktok.com/@aventurassinrumbo_" target="_blank" style="color: var(--text); text-decoration: none;">TikTok</a>
+  </header>
+
+  <div class="aventuras-container">
+    <h1>Aventuras</h1>
+
+    <div class="aventura">
+      <div class="aventura-imagen" style="background-image: url('img_aventura.jpg');"></div>
+      <div class="aventura-info">
+        <h2>Barco Abandonado</h2>
+        <p class="aventura-ubicacion">📍 Costanera Formosa</p>
+        <p class="aventura-descripcion">Descubre uno de los spots más épicos para pescar en Formosa. Este barco abandonado es el lugar perfecto para capturar truchas y dorados de gran tamaño.</p>
+      </div>
+    </div>
+
+  </div>
+
+    <div>
+      <h2 style="font-size: 2.5em; margin-bottom: 40px; font-weight: 600;">¿Cuál es el próximo lugar?</h2>
+
+      <form id="formularioSugerencia" onsubmit="enviarSugerencia(event)" style="max-width: 600px;">
+        <div class="form-grupo">
+          <label>Tu nombre</label>
+          <input type="text" id="nombre-persona" placeholder="Ej: Juan" required>
+        </div>
+
+        <div class="form-grupo">
+          <label>Nombre del lugar</label>
+          <input type="text" id="nombre-lugar" placeholder="Ej: Cascada del Paraíso" required>
+        </div>
+
+        <div class="form-grupo">
+          <label>¿Por qué deberíamos ir?</label>
+          <textarea id="por-que" placeholder="Cuéntanos por qué es épico..." required></textarea>
+        </div>
+
+        <div class="form-grupo">
+          <label>Cosas que quieran agregar</label>
+          <textarea id="cosas-agregar" placeholder="Ubicación, qué hay para hacer, datos importantes..."></textarea>
+        </div>
+
+        <button type="submit" class="enviar-btn">Sugerir</button>
+        <div class="mensaje-exito" id="mensajeExito">✓ ¡Gracias por la sugerencia!</div>
+      </form>
+
+      <div id="sugerenciasContainer" style="margin-top: 80px;"></div>
+    </div>
+
+  <footer>
+    <p>&copy; 2026 Aventuras sin Rumbo. Explorando Formosa.</p>
+  </footer>
+</div>
+
+<script>
+  function inicializarDatos() {
+    let sugerencias = JSON.parse(localStorage.getItem('sugerencias') || 'null');
+
+    if (!sugerencias) {
+      sugerencias = [
+        {
+          nombre: "Comunidad",
+          lugar: "Herradura",
+          porQue: "Uno de los mejores spots de Formosa para pesca de dorados. Paisaje increíble y agua cristalina.",
+          cosasAgregar: "Llevar equipo de pesca completo. Mejor en temporada de aguas altas.",
+          fecha: new Date().toLocaleDateString()
+        },
+        {
+          nombre: "Comunidad",
+          lugar: "Costena",
+          porQue: "Zona con mucha fauna y vegetación. Ideal para aventuras en la naturaleza y pesca diversa.",
+          cosasAgregar: "Acceso por caminos de tierra. Se recomienda 4x4.",
+          fecha: new Date().toLocaleDateString()
+        },
+        {
+          nombre: "Comunidad",
+          lugar: "Mojón de Fierro",
+          porQue: "Spot legendario de Formosa. Aguas profundas y abundancia de peces de gran tamaño.",
+          cosasAgregar: "Zona remota y salvaje. Llevar provisiones y equipo de emergencia.",
+          fecha: new Date().toLocaleDateString()
+        }
+      ];
+      localStorage.setItem('sugerencias', JSON.stringify(sugerencias));
+    }
+  }
+
+  function cargarSugerencias() {
+    const sugerencias = JSON.parse(localStorage.getItem('sugerencias') || '[]');
+    const container = document.getElementById('sugerenciasContainer');
+
+    sugerencias.forEach((sugerencia) => {
+      const aventuraHTML = `
+        <div class="aventura">
+          <div class="aventura-info">
+            <h2>${sugerencia.lugar}</h2>
+            <p class="aventura-ubicacion">Sugerido por ${sugerencia.nombre}</p>
+            <p class="aventura-descripcion"><strong>¿Por qué?</strong> ${sugerencia.porQue}</p>
+            ${sugerencia.cosasAgregar ? `<p class="aventura-descripcion"><strong>Más info:</strong> ${sugerencia.cosasAgregar}</p>` : ''}
+          </div>
+        </div>
+      `;
+      container.innerHTML += aventuraHTML;
+    });
+  }
+
+  function enviarSugerencia(event) {
+    event.preventDefault();
+
+    const nombrePersona = document.getElementById('nombre-persona').value.trim();
+    const nombreLugar = document.getElementById('nombre-lugar').value.trim();
+    const porQue = document.getElementById('por-que').value.trim();
+    const cosasAgregar = document.getElementById('cosas-agregar').value.trim();
+
+    // Guardar en localStorage
+    const sugerencias = JSON.parse(localStorage.getItem('sugerencias') || '[]');
+    sugerencias.push({
+      nombre: nombrePersona,
+      lugar: nombreLugar,
+      porQue: porQue,
+      cosasAgregar: cosasAgregar,
+      fecha: new Date().toLocaleDateString()
+    });
+    localStorage.setItem('sugerencias', JSON.stringify(sugerencias));
+
+    // Agregar a la página sin recargar
+    const container = document.getElementById('sugerenciasContainer');
+    const aventuraHTML = `
+      <div class="aventura">
+        <div class="aventura-info">
+          <h2>${nombreLugar}</h2>
+          <p class="aventura-ubicacion">📍 Sugerido por ${nombrePersona}</p>
+          <p class="aventura-descripcion"><strong>¿Por qué?</strong> ${porQue}</p>
+          ${cosasAgregar ? `<p class="aventura-descripcion"><strong>Más info:</strong> ${cosasAgregar}</p>` : ''}
+        </div>
+      </div>
+    `;
+    container.innerHTML += aventuraHTML;
+
+    // Mostrar mensaje
+    const mensaje = document.getElementById('mensajeExito');
+    mensaje.style.display = 'block';
+    document.getElementById('formularioSugerencia').reset();
+
+    setTimeout(() => {
+      mensaje.style.display = 'none';
+    }, 3000);
+
+    // Scroll a la sugerencia
+    setTimeout(() => {
+      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 500);
+  }
+
+  // Inicializar datos y cargar sugerencias al iniciar
+  window.addEventListener('DOMContentLoaded', () => {
+    inicializarDatos();
+    cargarSugerencias();
+  });
+</script>
