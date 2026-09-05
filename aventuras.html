@@ -28,11 +28,23 @@
     padding: 0 20px;
   }
 
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 16px;
+    }
+  }
+
   header {
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 20px 0;
+    }
   }
 
   .logo {
@@ -57,6 +69,13 @@
     text-align: center;
   }
 
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 60px;
+    }
+  }
+
   .aventura {
     margin-bottom: 0;
     display: flex;
@@ -77,10 +96,24 @@
     background-position: center;
   }
 
+  @media (max-width: 768px) {
+    .aventura-imagen {
+      height: 350px;
+      border-radius: 8px;
+    }
+  }
+
   .aventura-info h2 {
     font-size: 2.5em;
     margin-bottom: 15px;
     font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .aventura-info h2 {
+      font-size: 1.8em;
+      margin-bottom: 12px;
+    }
   }
 
   .aventura-ubicacion {
@@ -96,6 +129,13 @@
     max-width: 600px;
   }
 
+  @media (max-width: 768px) {
+    .aventura-descripcion {
+      font-size: 1em;
+      max-width: none;
+    }
+  }
+
   .sugerencia-section {
     margin-top: 150px;
     padding: 100px 0;
@@ -106,6 +146,18 @@
     font-size: 2.5em;
     margin-bottom: 50px;
     font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .sugerencia-section {
+      margin-top: 80px;
+      padding: 60px 0;
+    }
+
+    .sugerencia-section h2 {
+      font-size: 1.8em;
+      margin-bottom: 30px;
+    }
   }
 
   .form-grupo {
@@ -131,6 +183,14 @@
     color: var(--text);
     font-size: 1em;
     font-family: inherit;
+  }
+
+  @media (max-width: 768px) {
+    .form-grupo input,
+    .form-grupo textarea {
+      padding: 18px;
+      font-size: 16px;
+    }
   }
 
   .form-grupo input:focus,
@@ -164,6 +224,15 @@
 
   .enviar-btn:hover {
     opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .enviar-btn {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      font-size: 1.1em;
+    }
   }
 
   .mensaje-exito {
