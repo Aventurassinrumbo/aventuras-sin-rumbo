@@ -52,9 +52,9 @@
   .btn {
     display: inline-block;
     padding: 15px 40px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08);
     color: white;
-    border: 2px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
@@ -64,19 +64,19 @@
   }
 
   .btn:hover {
-    background: white;
-    color: var(--bg);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
   }
 
   .btn-secondary {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08);
     color: white;
-    border: 2px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .btn-secondary:hover {
-    background: white;
-    color: var(--bg);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
   }
 
   /* MODAL */
@@ -187,13 +187,9 @@
     }
 
     .btn {
-      padding: 16px 40px;
-      font-size: 0.95em;
-      display: block;
-      width: 100%;
-      max-width: 280px;
-      margin: 12px auto;
-      text-align: center;
+      padding: 14px 24px;
+      font-size: 0.9em;
+      white-space: nowrap;
     }
 
     .modal-content {
@@ -224,9 +220,9 @@
   <div class="container" style="text-align: center;">
     <h1>Aventuras sin Rumbo</h1>
     <p>Explorando Formosa</p>
-    <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px; justify-content: center; align-items: center;">
-      <a href="aventuras.html" class="btn" style="width: 100%; max-width: 280px;">Comenzar</a>
-      <a href="https://www.tiktok.com/@aventurassinrumbo_" target="_blank" class="btn btn-secondary" style="width: 100%; max-width: 280px;">TikTok</a>
+    <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; align-items: center;">
+      <a href="aventuras.html" class="btn">Comenzar</a>
+      <a href="https://www.tiktok.com/@aventurassinrumbo_" target="_blank" class="btn btn-secondary">TikTok</a>
     </div>
   </div>
 </section>
