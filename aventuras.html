@@ -1,378 +1,353 @@
-<title>Aventuras - Aventuras sin Rumbo</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Aventuras - Aventuras sin Rumbo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :root {
-    --primary: #FF6B35;
-    --accent: #00D9FF;
-    --bg: #0F1419;
-    --bg-light: #1A2030;
-    --text: #FFFFFF;
-    --text-muted: #A0A9B8;
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, var(--bg) 0%, #1a2a3a 100%);
-    color: var(--text);
-    overflow-x: hidden;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+    :root {
+      --primary: #FF6B35;
+      --accent: #00D9FF;
+      --bg: #0F1419;
+      --bg-light: #1A2030;
+      --text: #FFFFFF;
+      --text-muted: #A0A9B8;
     }
-    to {
-      opacity: 1;
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, #1a2a3a 100%);
+      color: var(--text);
+      overflow-x: hidden;
     }
-  }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  @media (max-width: 768px) {
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
     .container {
-      padding: 0 16px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-  }
 
-  header {
-    padding: 40px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  @media (max-width: 768px) {
     header {
-      padding: 20px 0;
+      padding: 40px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-  }
 
-  .logo {
-    font-size: 1.3em;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
+    .logo {
+      font-size: 1.3em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
 
-  .logo:hover {
-    transform: translateX(-5px);
-  }
+    .logo:hover {
+      transform: translateX(-5px);
+    }
 
-  header a:last-child {
-    color: var(--text-muted);
-    transition: all 0.3s;
-  }
+    header a:last-child {
+      color: var(--text-muted);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
 
-  header a:last-child:hover {
-    color: var(--accent);
-  }
+    header a:last-child:hover {
+      color: var(--accent);
+    }
 
-  .aventuras-container {
-    padding: 80px 0;
-  }
+    .aventuras-container {
+      padding: 80px 0;
+    }
 
-  h1 {
-    font-size: 3.5em;
-    font-weight: 700;
-    margin-bottom: 100px;
-    text-align: center;
-    animation: fadeInUp 0.8s ease-out;
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  @media (max-width: 768px) {
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 80px;
+      font-size: 3.5em;
+      font-weight: 700;
+      margin-bottom: 100px;
+      text-align: center;
+      animation: fadeInUp 0.8s ease-out;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h2 {
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .aventura {
-      margin-bottom: 100px;
+      margin-bottom: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .aventura:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .aventura:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .aventura:nth-child(3) {
+      animation-delay: 0.3s;
     }
 
     .aventura:last-child {
       margin-bottom: 0;
     }
-  }
 
-  .aventura {
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-  }
-
-  .aventura:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-
-  .aventura:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .aventura:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-
-  .aventura:last-child {
-    margin-bottom: 0;
-  }
-
-  .aventura-imagen {
-    width: 100%;
-    height: 600px;
-    background: rgba(255, 107, 53, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8em;
-    background-size: cover;
-    background-position: center;
-  }
-
-  @media (max-width: 768px) {
     .aventura-imagen {
-      height: 350px;
-      border-radius: 8px;
+      width: 100%;
+      height: 600px;
+      background: rgba(255, 107, 53, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8em;
+      background-size: cover;
+      background-position: center;
     }
-  }
 
-  .aventura-info {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    padding: 40px;
-    border-radius: 16px;
-    transition: all 0.4s ease;
-  }
+    .aventura-info {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      padding: 40px;
+      border-radius: 16px;
+      transition: all 0.4s ease;
+    }
 
-  .aventura:hover .aventura-info {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 107, 53, 0.4);
-    box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
-    transform: translateY(-8px);
-  }
+    .aventura:hover .aventura-info {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 107, 53, 0.4);
+      box-shadow: 0 20px 60px rgba(255, 107, 53, 0.15);
+      transform: translateY(-8px);
+    }
 
-  .aventura-info h2 {
-    font-size: 2.5em;
-    margin-bottom: 15px;
-    font-weight: 600;
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  @media (max-width: 768px) {
     .aventura-info h2 {
-      font-size: 1.8em;
-      margin-bottom: 12px;
-    }
-  }
-
-  .aventura-ubicacion {
-    color: var(--text-muted);
-    font-size: 1.1em;
-    margin-bottom: 30px;
-  }
-
-  .aventura-descripcion {
-    color: var(--text-muted);
-    font-size: 1.05em;
-    line-height: 1.8;
-    max-width: 600px;
-    margin-bottom: 25px;
-  }
-
-  .aventura-descripcion:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 768px) {
-    .aventura-descripcion {
-      font-size: 1em;
-      max-width: none;
-    }
-  }
-
-  .sugerencia-section {
-    margin-top: 150px;
-    padding: 100px 0;
-    border-top: 1px solid rgba(255, 107, 53, 0.1);
-  }
-
-  .sugerencia-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    font-weight: 600;
-  }
-
-  @media (max-width: 768px) {
-    .sugerencia-section {
-      margin-top: 80px;
-      padding: 60px 0;
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
 
-    .sugerencia-section h2 {
-      font-size: 1.8em;
+    .aventura-ubicacion {
+      color: var(--text-muted);
+      font-size: 1.1em;
       margin-bottom: 30px;
     }
-  }
 
-  .form-grupo {
-    margin-bottom: 30px;
-  }
+    .aventura-descripcion {
+      color: var(--text-muted);
+      font-size: 1.05em;
+      line-height: 1.8;
+      max-width: 600px;
+      margin-bottom: 25px;
+    }
 
-  .form-grupo label {
-    display: block;
-    color: var(--text);
-    margin-bottom: 12px;
-    font-size: 1.05em;
-    font-weight: 500;
-  }
+    .aventura-descripcion:last-child {
+      margin-bottom: 0;
+    }
 
-  .form-grupo input,
-  .form-grupo textarea {
-    width: 100%;
-    max-width: 600px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    border-radius: 6px;
-    color: var(--text);
-    font-size: 1em;
-    font-family: inherit;
-  }
+    .sugerencia-section {
+      margin-top: 150px;
+      padding: 100px 0;
+      border-top: 1px solid rgba(255, 107, 53, 0.1);
+    }
 
-  @media (max-width: 768px) {
+    .form-grupo {
+      margin-bottom: 30px;
+    }
+
+    .form-grupo label {
+      display: block;
+      color: var(--text);
+      margin-bottom: 12px;
+      font-size: 1.05em;
+      font-weight: 500;
+    }
+
     .form-grupo input,
     .form-grupo textarea {
-      padding: 18px;
-      font-size: 16px;
-    }
-  }
-
-  .form-grupo input:focus,
-  .form-grupo textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: rgba(255, 107, 53, 0.1);
-  }
-
-  .form-grupo textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-
-  .form-grupo input::placeholder,
-  .form-grupo textarea::placeholder {
-    color: #666;
-  }
-
-  .enviar-btn {
-    padding: 16px 50px;
-    background: linear-gradient(135deg, var(--primary) 0%, #ff8c5a 100%);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.05em;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-    letter-spacing: 0.5px;
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-  }
-
-  .enviar-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(255, 107, 53, 0.4);
-  }
-
-  .enviar-btn:active {
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    .enviar-btn {
       width: 100%;
       max-width: 600px;
-      padding: 20px;
-      font-size: 1.1em;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 107, 53, 0.2);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 1em;
+      font-family: inherit;
     }
-  }
 
-  .mensaje-exito {
-    color: var(--accent);
-    margin-top: 15px;
-    display: none;
-    animation: fadeInUp 0.5s ease-out;
-  }
+    .form-grupo input:focus,
+    .form-grupo textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: rgba(255, 107, 53, 0.1);
+    }
 
-  footer {
-    padding: 100px 0 40px;
-    text-align: center;
-    color: #666;
-    font-size: 0.95em;
-  }
-</style>
+    .form-grupo textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
 
-<div class="container">
-  <header>
-    <a href="index.html" class="logo">← Volver</a>
-    <a href="https://www.tiktok.com/@aventurassinrumbo_" target="_blank" style="color: var(--text); text-decoration: none;">TikTok</a>
-  </header>
+    .form-grupo input::placeholder,
+    .form-grupo textarea::placeholder {
+      color: #666;
+    }
 
-  <div class="aventuras-container">
-    <h1>Aventuras</h1>
+    .enviar-btn {
+      padding: 16px 50px;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c5a 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05em;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+    }
 
-    <div class="aventura">
-      <div class="aventura-imagen" style="background-image: url('img_aventura.jpg');"></div>
-      <div class="aventura-info">
-        <h2>Barco Abandonado</h2>
-        <p class="aventura-ubicacion">📍 Costanera Formosa</p>
-        <p class="aventura-descripcion">Descubre uno de los spots más épicos para pescar en Formosa. Este barco abandonado es el lugar perfecto para capturar truchas y dorados de gran tamaño.</p>
+    .enviar-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(255, 107, 53, 0.4);
+    }
+
+    .enviar-btn:active {
+      transform: translateY(-2px);
+    }
+
+    .mensaje-exito {
+      color: var(--accent);
+      margin-top: 15px;
+      display: none;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    footer {
+      padding: 100px 0 40px;
+      text-align: center;
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 0;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 80px;
+      }
+
+      .aventura-imagen {
+        height: 350px;
+        border-radius: 8px;
+      }
+
+      .aventura-info h2 {
+        font-size: 1.8em;
+        margin-bottom: 12px;
+      }
+
+      .aventura-descripcion {
+        font-size: 1em;
+        max-width: none;
+      }
+
+      .form-grupo input,
+      .form-grupo textarea {
+        padding: 18px;
+        font-size: 16px;
+      }
+
+      .enviar-btn {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        font-size: 1.1em;
+      }
+
+      .aventura {
+        margin-bottom: 100px;
+      }
+
+      .aventura:last-child {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="logo">← Volver</a>
+      <a href="https://www.tiktok.com/@aventurassinrumbo_" target="_blank">TikTok</a>
+    </header>
+
+    <div class="aventuras-container">
+      <h1>Aventuras</h1>
+
+      <div class="aventura">
+        <div class="aventura-imagen" style="background-image: url('img_aventura.jpg');"></div>
+        <div class="aventura-info">
+          <h2>Barco Abandonado</h2>
+          <p class="aventura-ubicacion">📍 Costanera Formosa</p>
+          <p class="aventura-descripcion">Descubre uno de los spots más épicos para pescar en Formosa. Este barco abandonado es el lugar perfecto para capturar truchas y dorados de gran tamaño.</p>
+        </div>
       </div>
     </div>
 
-  </div>
-
-    <div>
+    <div class="sugerencia-section">
       <h2 style="font-size: 2.5em; margin-bottom: 40px; font-weight: 600;">¿Cuál es el próximo lugar?</h2>
 
       <form id="formularioSugerencia" onsubmit="enviarSugerencia(event)" style="max-width: 600px;">
@@ -403,113 +378,115 @@
       <div id="sugerenciasContainer" style="margin-top: 80px;"></div>
     </div>
 
-  <footer>
-    <p>&copy; 2026 Aventuras sin Rumbo. Explorando Formosa.</p>
-  </footer>
-</div>
+    <footer>
+      <p>&copy; 2026 Aventuras sin Rumbo. Explorando Formosa.</p>
+    </footer>
+  </div>
 
-<script>
-  function inicializarDatos() {
-    let sugerencias = JSON.parse(localStorage.getItem('sugerencias') || 'null');
+  <script>
+    function inicializarDatos() {
+      let sugerencias = JSON.parse(localStorage.getItem('sugerencias') || 'null');
 
-    if (!sugerencias) {
-      sugerencias = [
-        {
-          nombre: "Comunidad",
-          lugar: "Herradura",
-          porQue: "Uno de los mejores spots de Formosa para pesca de dorados. Paisaje increíble y agua cristalina.",
-          cosasAgregar: "Llevar equipo de pesca completo. Mejor en temporada de aguas altas.",
-          fecha: new Date().toLocaleDateString()
-        },
-        {
-          nombre: "Comunidad",
-          lugar: "Costena",
-          porQue: "Zona con mucha fauna y vegetación. Ideal para aventuras en la naturaleza y pesca diversa.",
-          cosasAgregar: "Acceso por caminos de tierra. Se recomienda 4x4.",
-          fecha: new Date().toLocaleDateString()
-        },
-        {
-          nombre: "Comunidad",
-          lugar: "Mojón de Fierro",
-          porQue: "Spot legendario de Formosa. Aguas profundas y abundancia de peces de gran tamaño.",
-          cosasAgregar: "Zona remota y salvaje. Llevar provisiones y equipo de emergencia.",
-          fecha: new Date().toLocaleDateString()
-        }
-      ];
-      localStorage.setItem('sugerencias', JSON.stringify(sugerencias));
+      if (!sugerencias) {
+        sugerencias = [
+          {
+            nombre: "Comunidad",
+            lugar: "Herradura",
+            porQue: "Uno de los mejores spots de Formosa para pesca de dorados. Paisaje increíble y agua cristalina.",
+            cosasAgregar: "Llevar equipo de pesca completo. Mejor en temporada de aguas altas.",
+            fecha: new Date().toLocaleDateString()
+          },
+          {
+            nombre: "Comunidad",
+            lugar: "Costena",
+            porQue: "Zona con mucha fauna y vegetación. Ideal para aventuras en la naturaleza y pesca diversa.",
+            cosasAgregar: "Acceso por caminos de tierra. Se recomienda 4x4.",
+            fecha: new Date().toLocaleDateString()
+          },
+          {
+            nombre: "Comunidad",
+            lugar: "Mojón de Fierro",
+            porQue: "Spot legendario de Formosa. Aguas profundas y abundancia de peces de gran tamaño.",
+            cosasAgregar: "Zona remota y salvaje. Llevar provisiones y equipo de emergencia.",
+            fecha: new Date().toLocaleDateString()
+          }
+        ];
+        localStorage.setItem('sugerencias', JSON.stringify(sugerencias));
+      }
     }
-  }
 
-  function cargarSugerencias() {
-    const sugerencias = JSON.parse(localStorage.getItem('sugerencias') || '[]');
-    const container = document.getElementById('sugerenciasContainer');
+    function cargarSugerencias() {
+      const sugerencias = JSON.parse(localStorage.getItem('sugerencias') || '[]');
+      const container = document.getElementById('sugerenciasContainer');
 
-    sugerencias.forEach((sugerencia) => {
+      sugerencias.forEach((sugerencia) => {
+        const aventuraHTML = `
+          <div class="aventura">
+            <div class="aventura-info">
+              <h2>${sugerencia.lugar}</h2>
+              <p class="aventura-ubicacion">Sugerido por ${sugerencia.nombre}</p>
+              <p class="aventura-descripcion"><strong>¿Por qué?</strong> ${sugerencia.porQue}</p>
+              ${sugerencia.cosasAgregar ? `<p class="aventura-descripcion"><strong>Más info:</strong> ${sugerencia.cosasAgregar}</p>` : ''}
+            </div>
+          </div>
+        `;
+        container.innerHTML += aventuraHTML;
+      });
+    }
+
+    function enviarSugerencia(event) {
+      event.preventDefault();
+
+      const nombrePersona = document.getElementById('nombre-persona').value.trim();
+      const nombreLugar = document.getElementById('nombre-lugar').value.trim();
+      const porQue = document.getElementById('por-que').value.trim();
+      const cosasAgregar = document.getElementById('cosas-agregar').value.trim();
+
+      // Guardar en localStorage
+      const sugerencias = JSON.parse(localStorage.getItem('sugerencias') || '[]');
+      sugerencias.push({
+        nombre: nombrePersona,
+        lugar: nombreLugar,
+        porQue: porQue,
+        cosasAgregar: cosasAgregar,
+        fecha: new Date().toLocaleDateString()
+      });
+      localStorage.setItem('sugerencias', JSON.stringify(sugerencias));
+
+      // Agregar a la página sin recargar
+      const container = document.getElementById('sugerenciasContainer');
       const aventuraHTML = `
         <div class="aventura">
           <div class="aventura-info">
-            <h2>${sugerencia.lugar}</h2>
-            <p class="aventura-ubicacion">Sugerido por ${sugerencia.nombre}</p>
-            <p class="aventura-descripcion"><strong>¿Por qué?</strong> ${sugerencia.porQue}</p>
-            ${sugerencia.cosasAgregar ? `<p class="aventura-descripcion"><strong>Más info:</strong> ${sugerencia.cosasAgregar}</p>` : ''}
+            <h2>${nombreLugar}</h2>
+            <p class="aventura-ubicacion">Sugerido por ${nombrePersona}</p>
+            <p class="aventura-descripcion"><strong>¿Por qué?</strong> ${porQue}</p>
+            ${cosasAgregar ? `<p class="aventura-descripcion"><strong>Más info:</strong> ${cosasAgregar}</p>` : ''}
           </div>
         </div>
       `;
       container.innerHTML += aventuraHTML;
+
+      // Mostrar mensaje
+      const mensaje = document.getElementById('mensajeExito');
+      mensaje.style.display = 'block';
+      document.getElementById('formularioSugerencia').reset();
+
+      setTimeout(() => {
+        mensaje.style.display = 'none';
+      }, 3000);
+
+      // Scroll a la sugerencia
+      setTimeout(() => {
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+    }
+
+    // Inicializar datos y cargar sugerencias al iniciar
+    window.addEventListener('DOMContentLoaded', () => {
+      inicializarDatos();
+      cargarSugerencias();
     });
-  }
-
-  function enviarSugerencia(event) {
-    event.preventDefault();
-
-    const nombrePersona = document.getElementById('nombre-persona').value.trim();
-    const nombreLugar = document.getElementById('nombre-lugar').value.trim();
-    const porQue = document.getElementById('por-que').value.trim();
-    const cosasAgregar = document.getElementById('cosas-agregar').value.trim();
-
-    // Guardar en localStorage
-    const sugerencias = JSON.parse(localStorage.getItem('sugerencias') || '[]');
-    sugerencias.push({
-      nombre: nombrePersona,
-      lugar: nombreLugar,
-      porQue: porQue,
-      cosasAgregar: cosasAgregar,
-      fecha: new Date().toLocaleDateString()
-    });
-    localStorage.setItem('sugerencias', JSON.stringify(sugerencias));
-
-    // Agregar a la página sin recargar
-    const container = document.getElementById('sugerenciasContainer');
-    const aventuraHTML = `
-      <div class="aventura">
-        <div class="aventura-info">
-          <h2>${nombreLugar}</h2>
-          <p class="aventura-ubicacion">📍 Sugerido por ${nombrePersona}</p>
-          <p class="aventura-descripcion"><strong>¿Por qué?</strong> ${porQue}</p>
-          ${cosasAgregar ? `<p class="aventura-descripcion"><strong>Más info:</strong> ${cosasAgregar}</p>` : ''}
-        </div>
-      </div>
-    `;
-    container.innerHTML += aventuraHTML;
-
-    // Mostrar mensaje
-    const mensaje = document.getElementById('mensajeExito');
-    mensaje.style.display = 'block';
-    document.getElementById('formularioSugerencia').reset();
-
-    setTimeout(() => {
-      mensaje.style.display = 'none';
-    }, 3000);
-
-    // Scroll a la sugerencia
-    setTimeout(() => {
-      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 500);
-  }
-
-  // Inicializar datos y cargar sugerencias al iniciar
-  window.addEventListener('DOMContentLoaded', () => {
-    inicializarDatos();
-    cargarSugerencias();
-  });
-</script>
+  </script>
+</body>
+</html>

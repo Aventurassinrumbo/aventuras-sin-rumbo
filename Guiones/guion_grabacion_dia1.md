@@ -1,49 +1,49 @@
-# 🎬 GUIÓN PARA GRABAR - "Recorriendo Lugares de Pesca en Formosa - Día 1"
+# 🎬 GUIÓN PARA GRABAR - "Recorriendo Lugares de Pesca en Formosa - Herraduro"
 
-## 📍 LOCACIÓN: Barco Abandonado - Costanera Formosa
+## 📍 LOCACIÓN: Herraduro - Lugar con Vegetación Densa
 
 ---
 
 ## ⏱️ ESTRUCTURA (Graba esto en orden)
 
-### 1️⃣ INTRO (En la moto, saliendo de casa) - 15 SEG
+### 1️⃣ INTRO (En el lugar o en la moto) - 15-20 SEG
 **[Cámara en ti, hablando directo]**
 
-> "Hola gente, ¿qué onda? Hoy vamos a hacer algo diferente. Voy a recorrer lugares de pesca en Formosa que casi nadie conoce. Este es el **día número uno**. ¿Listo? Vamos a tirar la línea a la costanera Formosa. Sígueme."
+> "Hola gente, ¿qué onda? Estamos acá a **[X] kilómetros de Formosa capital**, en un lugar llamado **Herraduro**. La vegetación acá es increíble, está lleno de todo. Hoy te traigo este spot que casi nadie conoce para pescar. ¿Listo? Vamos."
 
-**[Luego acelera, muestra la moto en movimiento]**
-
----
-
-### 2️⃣ RECORRIDO EN MOTO (Mientras conducís) - 40-50 SEG
-
-**[Cámara fija en la moto mostrando el camino, tú narras]**
-
-> "Salgo desde [tu barrio]. Son aproximadamente [X] kilómetros hasta la costanera. La ruta está así... [describe lo que ves: camino, vistas, etc.]"
-
-**[Cambio de plano: Cámara en ti de perfil mientras manejas]**
-
-> "Mira, la cosa es así: esta serie va a ser sobre lugares escondidos para pescar. Lugares que muchos no conocen, pero que están ahí. Hoy te muestro uno de los más épicos: un barco abandonado."
-
-**[Muestra la moto, el camino, vistas al pasar]**
-
-> "Voy en mi Tornado 300 rally edition. La moto perfecta para este tipo de aventuras. Ya falta poco..."
+**[Muestra la vegetación, el lugar alrededor]**
 
 ---
 
-### 3️⃣ LLEGADA AL LUGAR (Arriving - 20-30 SEG)
+### 2️⃣ EXPLORACIÓN DEL LUGAR (Caminando/explorando) - 40-50 SEG
 
-**[Frenas, te bajás de la moto, cámara te enfoca a ti]**
+**[Cámara caminando entre la vegetación, tú narras]**
 
-> "Llegamos. Esto es la **costanera Formosa**, zona [específica]. Este es el barco abandonado del que te hablé. Mira..."
+> "Mira esto, estamos en Herraduro. El lugar está repleto de vegetación, ¿ves? Árboles, plantas, todo cerrado. Es un lugar perdido, pero el río está acá y la fauna que hay es seria."
 
-**[Gira la cámara para mostrar el barco, el lugar, la vista general]**
+**[Cambio de plano: Cámara en ti de frente mostrando la densidad de plantas]**
 
-> "Está ubicado acá, en el río [río específico si sabes el nombre]. La vista es increíble. Acá la pesca es seria - truchas, dorados, todo eso."
+> "Esta serie va a ser sobre lugares escondidos para pescar en Formosa. Lugares que muchos no conocen, pero que cuando llegas y ves toda esta naturaleza, entendés por qué los peces vienen acá."
 
-**[Camina hacia el lugar, muestra detalles]**
+**[Muestra la vegetación con detalle, acércate al agua]**
 
-> "¿Ves? Este barco lleva años acá. Es el spot perfecto. Poca gente lo conoce, así que cuando llegas, es tuyo nada más."
+> "Herraduro es especial. Con tanta vegetación, hay todo tipo de fauna acuática. Vamos a ver qué sacamos."
+
+---
+
+### 3️⃣ LLEGADA AL SPOT (Encontrando el mejor lugar) - 20-30 SEG
+
+**[Frenas/llegas al punto de pesca, cámara te enfoca a ti]**
+
+> "Llegamos al spot. Esto es **Herraduro**, a **[X] km de Formosa capital**. Mira alrededor, toda esta vegetación... es el ambiente perfecto."
+
+**[Gira la cámara para mostrar el río, el lugar, la vegetación general]**
+
+> "La vista es increíble. Toda esta maleza, estas plantas acuáticas, este río... acá se esconden los peces grandes. Es tuyo nada más."
+
+**[Camina hacia el agua, muestra detalles de la vegetación y el río]**
+
+> "¿Ves cómo está todo cerrado con plantas? Perfecto para pescar. Poca gente se anima a venir acá."
 
 ---
 

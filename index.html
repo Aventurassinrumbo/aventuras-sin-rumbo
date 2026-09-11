@@ -1,293 +1,173 @@
-<title>Aventuras sin Rumbo</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Aventuras sin Rumbo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :root {
-    --primary: #FF6B35;
-    --accent: #00D9FF;
-    --bg: #0F1419;
-    --bg-light: #1A2030;
-    --text: #FFFFFF;
-    --text-muted: #A0A9B8;
-  }
-
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, var(--bg) 0%, #1a2a3a 100%);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  section {
-    padding: 150px 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  h1 {
-    font-size: 4.5em;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: -2px;
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  p {
-    font-size: 1.2em;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 16px 48px;
-    background: linear-gradient(135deg, var(--primary) 0%, #ff8c5a 100%);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.05em;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-  }
-
-  .btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(255, 107, 53, 0.4);
-  }
-
-  .btn-secondary {
-    background: linear-gradient(135deg, var(--accent) 0%, #00b8d4 100%);
-    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
-  }
-
-  .btn-secondary:hover {
-    box-shadow: 0 20px 50px rgba(0, 217, 255, 0.4);
-  }
-
-  /* MODAL */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    align-items: center;
-    justify-content: center;
-  }
-
-  .modal.active {
-    display: flex;
-  }
-
-  .modal-content {
-    background: var(--bg);
-    padding: 60px 50px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
-    border: 1px solid rgba(255, 107, 53, 0.2);
-  }
-
-  .modal-close {
-    float: right;
-    font-size: 1.5em;
-    color: #888;
-    cursor: pointer;
-    transition: color 0.3s;
-  }
-
-  .modal-close:hover {
-    color: var(--primary);
-  }
-
-  .modal h2 {
-    color: var(--text);
-    margin-bottom: 30px;
-    font-size: 2em;
-    clear: both;
-  }
-
-  input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    border-radius: 6px;
-    color: var(--text);
-    font-size: 1em;
-  }
-
-  input:focus {
-    outline: none;
-    border-color: var(--primary);
-    background: rgba(255, 107, 53, 0.1);
-  }
-
-  .aventuras-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 80px;
-    margin-top: 60px;
-  }
-
-  .aventura-item {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .aventura-emoji {
-    font-size: 5em;
-    line-height: 1;
-  }
-
-  .aventura-nombre {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .aventura-ubicacion {
-    color: #888;
-    font-size: 0.95em;
-  }
-
-  @keyframes fadeInScale {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-      opacity: 1;
-      transform: scale(1);
+
+    :root {
+      --primary: #FF6B35;
+      --accent: #00D9FF;
+      --bg: #0F1419;
+      --text: #FFFFFF;
+      --text-muted: #A0A9B8;
     }
-  }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, #1a2a3a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    to {
-      opacity: 1;
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-  }
 
-  h1 {
-    animation: fadeInScale 0.8s ease-out;
-  }
-
-  p {
-    animation: fadeIn 1s ease-out 0.2s forwards;
-    opacity: 0;
-  }
-
-  .btn {
-    animation: fadeIn 1s ease-out 0.4s forwards;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-  }
-
-  .btn:hover {
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
     section {
-      padding: 80px 0;
-      min-height: auto;
+      padding: 150px 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 15px;
+      font-size: 4.5em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInScale 0.8s ease-out;
+      position: relative;
+      z-index: 1;
     }
 
     p {
-      font-size: 1em;
+      font-size: 1.2em;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      animation: fadeIn 1s ease-out 0.2s forwards;
+      opacity: 0;
+      position: relative;
+      z-index: 1;
     }
 
     .btn {
-      padding: 14px 24px;
-      font-size: 0.9em;
-      white-space: nowrap;
+      display: inline-block;
+      padding: 16px 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c5a 100%);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+      animation: fadeIn 1s ease-out 0.4s forwards;
+      opacity: 0;
+      position: relative;
+      z-index: 1;
     }
 
-    .modal-content {
-      padding: 40px 30px;
-      width: 95%;
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(255, 107, 53, 0.4);
     }
 
-    .modal h2 {
-      font-size: 1.5em;
+    .btn-secondary {
+      background: linear-gradient(135deg, var(--accent) 0%, #00b8d4 100%);
+      box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
     }
 
-    input {
-      padding: 16px;
-      font-size: 16px;
+    .btn-secondary:hover {
+      box-shadow: 0 20px 50px rgba(0, 217, 255, 0.4);
     }
 
-    .aventura-emoji {
-      font-size: 3em;
-    }
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 0;
+        min-height: auto;
+      }
 
-    .aventura-nombre {
-      font-size: 1.3em;
-    }
-  }
-</style>
+      h1 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+      }
 
-<section id="home">
-  <div class="container" style="text-align: center;">
-    <h1>Aventuras sin Rumbo</h1>
-    <p>Explorando Formosa</p>
-    <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; align-items: center;">
-      <a href="aventuras.html" class="btn">Comenzar</a>
-      <a href="https://www.tiktok.com/@aventurassinrumbo_" target="_blank" class="btn btn-secondary">TikTok</a>
+      p {
+        font-size: 1em;
+      }
+
+      .btn {
+        padding: 14px 24px;
+        font-size: 0.9em;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section id="home">
+    <div class="container" style="text-align: center;">
+      <h1>Aventuras sin Rumbo</h1>
+      <p>Explorando Formosa</p>
+      <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <a href="aventuras.html" class="btn">Comenzar</a>
+        <a href="https://www.tiktok.com/@aventurassinrumbo_" target="_blank" class="btn btn-secondary">TikTok</a>
+      </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
+</body>
+</html>
