@@ -394,6 +394,7 @@
             lugar: "Herradura",
             porQue: "Uno de los mejores spots de Formosa para pesca de dorados. Paisaje increíble y agua cristalina.",
             cosasAgregar: "Llevar equipo de pesca completo. Mejor en temporada de aguas altas.",
+            imagen: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
             fecha: new Date().toLocaleDateString()
           },
           {
@@ -401,6 +402,7 @@
             lugar: "Costena",
             porQue: "Zona con mucha fauna y vegetación. Ideal para aventuras en la naturaleza y pesca diversa.",
             cosasAgregar: "Acceso por caminos de tierra. Se recomienda 4x4.",
+            imagen: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=600&fit=crop",
             fecha: new Date().toLocaleDateString()
           },
           {
@@ -408,6 +410,7 @@
             lugar: "Mojón de Fierro",
             porQue: "Spot legendario de Formosa. Aguas profundas y abundancia de peces de gran tamaño.",
             cosasAgregar: "Zona remota y salvaje. Llevar provisiones y equipo de emergencia.",
+            imagen: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop",
             fecha: new Date().toLocaleDateString()
           }
         ];
@@ -420,8 +423,10 @@
       const container = document.getElementById('sugerenciasContainer');
 
       sugerencias.forEach((sugerencia) => {
+        const imagenUrl = sugerencia.imagen || 'img_aventura.jpg';
         const aventuraHTML = `
           <div class="aventura">
+            <div class="aventura-imagen" style="background-image: url('${imagenUrl}');"></div>
             <div class="aventura-info">
               <h2>${sugerencia.lugar}</h2>
               <p class="aventura-ubicacion">Sugerido por ${sugerencia.nombre}</p>
@@ -442,6 +447,9 @@
       const porQue = document.getElementById('por-que').value.trim();
       const cosasAgregar = document.getElementById('cosas-agregar').value.trim();
 
+      // Imagen de placeholder
+      const imagenPlaceholder = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop';
+
       // Guardar en localStorage
       const sugerencias = JSON.parse(localStorage.getItem('sugerencias') || '[]');
       sugerencias.push({
@@ -449,6 +457,7 @@
         lugar: nombreLugar,
         porQue: porQue,
         cosasAgregar: cosasAgregar,
+        imagen: imagenPlaceholder,
         fecha: new Date().toLocaleDateString()
       });
       localStorage.setItem('sugerencias', JSON.stringify(sugerencias));
@@ -457,6 +466,7 @@
       const container = document.getElementById('sugerenciasContainer');
       const aventuraHTML = `
         <div class="aventura">
+          <div class="aventura-imagen" style="background-image: url('${imagenPlaceholder}');"></div>
           <div class="aventura-info">
             <h2>${nombreLugar}</h2>
             <p class="aventura-ubicacion">Sugerido por ${nombrePersona}</p>
